@@ -21,43 +21,43 @@ FoamFile
     {
         type            patch;
         physicalType    patch;
-        nFaces          14;
-        startFace       23660;
+        nFaces          30;
+        startFace       92612;
     }
     outlet
     {
         type            patch;
         physicalType    patch;
-        nFaces          23;
-        startFace       23623;
+        nFaces          46;
+        startFace       92537;
     }
     airfoil
     {
         type            wall;
         physicalType    wall;
-        nFaces          92;
-        startFace       23689;
+        nFaces          158;
+        startFace       92672;
     }
     top
     {
         type            symmetryPlane;
         physicalType    symmetryPlane;
-        nFaces          14;
-        startFace       23646;
+        nFaces          29;
+        startFace       92583;
     }
     bottom
     {
         type            symmetryPlane;
         physicalType    symmetryPlane;
-        nFaces          15;
-        startFace       23674;
+        nFaces          30;
+        startFace       92642;
     }
     frontAndBack
     {
         type            empty;
         physicalType    empty;
-        nFaces          13544;
-        startFace       10079;
+        nFaces          52962;
+        startFace       39575;
     }
 )
 
