@@ -14,8 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-// dimensions      [1 -1 -2 0 0 0 0];
-dimensions      [0 2 -2 0 0 0 0];   // kinematic pressure (m^2/s^2)
+dimensions      [0 2 -2 0 0 0 0];
 
 internalField   uniform 0;
 
@@ -23,28 +22,27 @@ boundaryField
 {
     inlet
     {
-        type            zeroGradient;
-    }
-
-    outlet
-    {
-        type            fixedValue;
-        value           uniform 0;
-    }
-
-    airfoil
-    {
-        type            zeroGradient;  // wall condition
-    }
-
-    bottom
-    {
-        type            symmetryPlane;
+        type            freestreamPressure;
     }
 
     top
     {
-        type            symmetryPlane;
+        type            freestreamPressure;
+    }
+
+    bottom
+    {
+        type            freestreamPressure;
+    }
+
+    outlet
+    {
+        type            freestreamPressure;
+    }
+
+    airfoil
+    {
+        type            zeroGradient;
     }
 
     frontAndBack

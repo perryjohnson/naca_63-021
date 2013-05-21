@@ -9,45 +9,45 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volVectorField;
-    object      U;
+    class       volScalarField;
+    object      nuTilda;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 1 -1 0 0 0 0];
+dimensions      [0 2 -1 0 0 0 0];
 
-internalField   uniform (30 0 0);
+internalField   uniform 0.14;
 
 boundaryField
 {
     inlet
     {
         type            freestream;
-        freestreamValue uniform (30 0 0);  // AoA = 0 deg
+        freestreamValue uniform 0.14;
     }
 
     top
     {
         type            freestream;
-        freestreamValue uniform (30 0 0);
+        freestreamValue uniform 0.14;
     }
 
     bottom
     {
         type            freestream;
-        freestreamValue uniform (30 0 0);
+        freestreamValue uniform 0.14;
     }
 
     outlet
     {
         type            freestream;
-        freestreamValue uniform (30 0 0);
+        freestreamValue uniform 0.14;
     }
 
     airfoil
     {
         type            fixedValue;
-        value           uniform (0 0 0);
+        value           uniform 0;
     }
 
     frontAndBack
