@@ -10,42 +10,44 @@ FoamFile
     version     2.0;
     format      ascii;
     class       volVectorField;
-    location    "0";
     object      U;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 dimensions      [0 1 -1 0 0 0 0];
 
-internalField   uniform (1 0 0);
+internalField   uniform (25.75 3.62 0);
 
 boundaryField
 {
     inlet
     {
-        type            uniformFixedValue;
-        uniformValue    constant (1 0 0);
+        type            freestream;
+        freestreamValue uniform (25.75 3.62 0);
+    }
+
+    top
+    {
+        type            freestream;
+        freestreamValue uniform (25.75 3.62 0);
+    }
+
+    bottom
+    {
+        type            freestream;
+        freestreamValue uniform (25.75 3.62 0);
     }
 
     outlet
     {
-        type            zeroGradient;
+        type            freestream;
+        freestreamValue uniform (25.75 3.62 0);
     }
 
     airfoil
     {
         type            fixedValue;
-        value           uniform (0 0 0);  // no-slip condition (wall)
-    }
-
-    bottom
-    {
-        type            symmetryPlane;
-    }
-
-    top
-    {
-        type            symmetryPlane;
+        value           uniform (0 0 0);
     }
 
     frontAndBack
@@ -53,6 +55,5 @@ boundaryField
         type            empty;
     }
 }
-
 
 // ************************************************************************* //
