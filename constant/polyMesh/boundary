@@ -20,14 +20,28 @@ FoamFile
     inlet
     {
         type            patch;
-        physicalType    patch;
+        physicalType    inlet;
         nFaces          62;
         startFace       367418;
+    }
+    top
+    {
+        type            patch;
+        physicalType    inlet;
+        nFaces          59;
+        startFace       367359;
+    }
+    bottom
+    {
+        type            patch;
+        physicalType    inlet;
+        nFaces          60;
+        startFace       367480;
     }
     outlet
     {
         type            patch;
-        physicalType    patch;
+        physicalType    outlet;
         nFaces          93;
         startFace       367266;
     }
@@ -37,20 +51,6 @@ FoamFile
         physicalType    wall;
         nFaces          292;
         startFace       367540;
-    }
-    top
-    {
-        type            symmetryPlane;
-        physicalType    symmetryPlane;
-        nFaces          59;
-        startFace       367359;
-    }
-    bottom
-    {
-        type            symmetryPlane;
-        physicalType    symmetryPlane;
-        nFaces          60;
-        startFace       367480;
     }
     frontAndBack
     {
